@@ -1,0 +1,29 @@
+﻿Build started 27.2.2018 г. 2:02:22.
+     1>Project "D:\C++\Linear_Data_Structures\PriorityQueue\PriorityQueue\PriorityQueue.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(98): warning C4018: '<': signed/unsigned mismatch
+         d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(93): note: while compiling class template member function 'void PriorityQueue<int>::heapifyDown(int)'
+         d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(42): note: see reference to function template instantiation 'void PriorityQueue<int>::heapifyDown(int)' being compiled
+         d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(27): note: while compiling class template member function 'void PriorityQueue<int>::push(const T &)'
+                 with
+                 [
+                     T=int
+                 ]
+         d:\c++\linear_data_structures\priorityqueue\priorityqueue\source.cpp(7): note: see reference to function template instantiation 'void PriorityQueue<int>::push(const T &)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+         d:\c++\linear_data_structures\priorityqueue\priorityqueue\source.cpp(5): note: see reference to class template instantiation 'PriorityQueue<int>' being compiled
+     1>d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(101): warning C4018: '<': signed/unsigned mismatch
+     1>d:\c++\linear_data_structures\priorityqueue\priorityqueue\priorityqueue.h(65): warning C4715: 'PriorityQueue<int>::top': not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\C++\Linear_Data_Structures\PriorityQueue\Debug\PriorityQueue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\C++\Linear_Data_Structures\PriorityQueue\Debug\PriorityQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\C++\Linear_Data_Structures\PriorityQueue\Debug\PriorityQueue.lib" /MACHINE:X86 Debug\Source.obj
+         PriorityQueue.vcxproj -> D:\C++\Linear_Data_Structures\PriorityQueue\Debug\PriorityQueue.exe
+     1>Done Building Project "D:\C++\Linear_Data_Structures\PriorityQueue\PriorityQueue\PriorityQueue.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.19
