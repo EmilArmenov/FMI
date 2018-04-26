@@ -59,17 +59,23 @@ void Basket::addEgg(const Egg & egg)
 
 void Basket::removeEgg(const char * eggName)
 {
-	for (int i = 0; i < eggCounter; i++)
+	int i;
+	for (i = 0; i < eggCounter; i++)
 	{
 		if (strcmp(eggs[i].getName(), eggName) == 0)
 		{
 			for (int j = i; j < eggCounter - 1; j++)
 				swap(eggs[j], eggs[j + 1]);
-			
+
 			break;
 		}
 	}
-	eggCounter--;
+
+	if (i == eggCounter)
+		std::cout << "The egg with name " << eggName << " doesn't exist in the basket \n";
+
+	else
+		eggCounter--;
 }
 
 const char * Basket::getOwner() const
