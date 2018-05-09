@@ -3,6 +3,9 @@
 
 class Basket 
 {
+	//operator used to save eggs of a basket in a text file
+	friend std::ostream& operator<<(std::ostream& out, const Basket& b);
+
 public:
 	Basket(const char* owner = "unknown");
 	Basket(const Basket& rhs);

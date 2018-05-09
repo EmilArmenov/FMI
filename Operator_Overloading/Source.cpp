@@ -13,8 +13,7 @@ void report(const Basket& b)
 
 	//writing every egg from the basket in the text file
 	std::ofstream out(fileName);
-	for (int i = 0; i < b.getEggsAmount(); i++)
-		out << b[i].getName() << ' ' << b[i].getSize() << '\n';
+	out << b;
 
 	delete[] fileName;
 	out.close();

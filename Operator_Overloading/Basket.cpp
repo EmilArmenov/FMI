@@ -78,6 +78,14 @@ void Basket::removeEgg(const char * eggName)
 		eggCounter--;
 }
 
+std::ostream& operator<<(std::ostream& out, const Basket& b)
+{
+	for (int i = 0; i < b.getEggsAmount(); i++)
+		out << b[i];
+
+	return out;
+}
+
 const char * Basket::getOwner() const
 {
 	return ownerName;

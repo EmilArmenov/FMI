@@ -4,6 +4,9 @@
 
 class Egg 
 {
+	//operator used to save an egg in a text file
+	friend std::ostream& operator<<(std::ostream& out, const Egg& e);
+
 public:
 	Egg(const char* name = "", short size = 0);
 	Egg(const Egg& rhs);

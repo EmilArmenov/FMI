@@ -26,6 +26,12 @@ Egg::~Egg()
 	delete[] eggName;
 }
 
+std::ostream& operator<<(std::ostream& out, const Egg& e)
+{
+	out << e.getName() << ' ' << e.getSize() << '\n';
+	return out;
+}
+
 void Egg::write(std::ofstream & out)
 {
 	int size = strlen(eggName);

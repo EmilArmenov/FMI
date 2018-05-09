@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+//this linked list uses dummy elment as the head node
+//in order to prevent some insertion and deletion problems using an iterator
 template<class T>
 class LinkedList 
 {

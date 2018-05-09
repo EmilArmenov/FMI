@@ -24,6 +24,8 @@ public:
 	void insertAt(size_t index, const T& what);
 	const T&operator[](size_t index)const;
 	T&operator[](size_t i);
+
+	//concatenates two arrays
 	DynamicArray&operator+=(const DynamicArray& rhs);
 	DynamicArray operator+(const DynamicArray& rhs)const;
 
@@ -148,10 +150,10 @@ void DynamicArray<T>::removeBack()
 template<class T>
 void DynamicArray<T>::remove(size_t index)
 {
-	if (index < 0)
+	if (index < 0 || index >= currSize)
 		throw std::out_of_range("Index out of range");
 
-	if (index >= currSize)
+	if (index == currSize - 1)
 	{
 		removeBack();
 		return;
@@ -196,7 +198,7 @@ void DynamicArray<T>::insertAt(size_t index, const T & what)
 		add(what);
 		return;
 	}
-	else if (index < currSize)
+	else if (index < currSize && index >= 0)
 	{
 		add(what);
 
@@ -214,7 +216,7 @@ void DynamicArray<T>::insertAt(size_t index, const T & what)
 template<class T>
 const T&DynamicArray<T>::operator[](size_t index)const
 {
-	if (index<0 || index>currSize)
+	if (index < 0 || index >= currSize)
 		throw std::out_of_range("from DynamicArray::operator[] const");
 
 	return data[index];
@@ -223,8 +225,9 @@ const T&DynamicArray<T>::operator[](size_t index)const
 template<class T>
 T & DynamicArray<T>::operator[](size_t index)
 {
-	if (index<0 || index>currSize)
-		throw "Index out of scope";
+	if (index < 0 || index >= currSize)
+		throw std::out_of_range("from DynamicArray::operator[] const");
+
 
 	return data[index];
 }
