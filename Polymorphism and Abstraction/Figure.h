@@ -17,6 +17,10 @@ public:
 	Figure& operator=(const Figure& rhs);
 	virtual ~Figure();
 
+	//a function used to construct full objects of the wanted figure
+	//not just the parts of the figure class
+	virtual Figure* clone() = 0;
+
 public:
 	//prints the information of a figure(attributes) on the screen
 	virtual void print()const = 0;

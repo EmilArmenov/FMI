@@ -18,6 +18,7 @@ public:
 	bool within(const Rectangle& rhs)const;
 	void saveInFile(std::fstream& file)const;
 	const char* getFigType()const;
+	virtual Line* clone() { return (new Line(*this)); }
 
 private:
 	Point p1, p2;

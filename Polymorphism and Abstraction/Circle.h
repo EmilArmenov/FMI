@@ -18,6 +18,7 @@ public:
 	bool within(const Rectangle& rhs)const;
 	void saveInFile(std::fstream& file)const;
 	const char* getFigType()const;
+	virtual Circle* clone() { return (new Circle(*this)); }
 
 private:
 	Point center;

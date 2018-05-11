@@ -8,6 +8,12 @@
 class SVG 
 {
 public:
+	SVG() {}
+	SVG(const SVG& rhs);
+	SVG&operator=(const SVG& rhs);
+	~SVG();
+
+public:
 	//prints all the figures in the screen
 	void print()const;
 
@@ -29,7 +35,6 @@ public:
 	//saves every figure in a file by the svg format
 	void saveFiguresInFile(std::fstream& file)const;
 
-	~SVG();
 private:
 	//gets the color for a figure from a fileLine
 	const char* getFileColor(const char* fileInfo);

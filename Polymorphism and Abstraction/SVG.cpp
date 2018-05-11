@@ -107,6 +107,31 @@ void SVG::createFromFile(char * fileLine)
 	}
 }
 
+SVG::SVG(const SVG & rhs)
+{
+	for (int i = 0; i < rhs.figureContainer.getSize(); i++)
+		figureContainer.add(rhs.figureContainer[i]->clone());
+}
+
+SVG & SVG::operator=(const SVG & rhs)
+{
+	if (this != &rhs)
+	{
+		for (int i = 0; i < figureContainer.getSize(); i++)
+			delete[] figureContainer[i];
+
+		for (int i = 0; i < rhs.figureContainer.getSize(); i++)
+			figureContainer.add(rhs.figureContainer[i]->clone());
+	}
+	return *this;
+}
+
+SVG::~SVG()
+{
+	for (int i = 0; i < figureContainer.getSize(); i++)
+		delete[] figureContainer[i];
+}
+
 void SVG::saveFiguresInFile(std::fstream & file) const
 {
 	for (int i = 0; i < figureContainer.getSize(); i++)
@@ -235,12 +260,6 @@ void SVG::withinRectangle(const Rectangle& r) const
 		if (figureContainer[i]->within(r))
 			figureContainer[i]->print();
 	}
-}
-
-SVG::~SVG()
-{
-	for (int i = 0; i < figureContainer.getSize(); i++)
-		delete[] figureContainer[i];
 }
 
 void SVG::print()const

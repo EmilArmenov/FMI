@@ -17,6 +17,7 @@ public:
 	virtual bool within(const Rectangle& rhs)const;
 	virtual void saveInFile(std::fstream& file)const;
 	virtual const char* getFigType()const;
+	virtual Rectangle* clone() { return (new Rectangle(*this)); }
 
 public:
 	//gets the point of the rectangle
