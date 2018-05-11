@@ -13,11 +13,11 @@ public:
 	~Circle() {}
 
 public:
-	void print()const;
-	void translate(double x, double y);
-	bool within(const Rectangle& rhs)const;
-	void saveInFile(std::fstream& file)const;
-	const char* getFigType()const;
+	virtual void print()const;
+	virtual void translate(double x, double y);
+	virtual bool within(const Rectangle& rhs)const;
+	virtual void saveInFile(std::fstream& file)const;
+	virtual const char* getFigType()const;
 	virtual Circle* clone() { return (new Circle(*this)); }
 
 private:
